@@ -7,12 +7,13 @@ execute seu ambiente virtual, logo depois o comando:
 ```bash
 git init
 ``` 
+Esse comando cria um repositório .git dentro do seu projeto.
 
-Em seguida, faça:
+Em seguida precisamos adicionar todos os arquivos já existente do seu projeto para a área de staging do github,
+essa área é um local de armazenamento intermediário, situada entre sua máquina e o github. Para isso, digite:
 ```bash
 git add .
 ``` 
-Esse comando adiciona todos os arquivos do projeto na área de stagging.
 
 Agora vamos nomear essa versão do projeto que você pretende subir:
 ```bash
@@ -32,6 +33,38 @@ OBS.: **não precisa adicionar um README**, por isso não marque a caixinha do r
 
 Logo em seguida você vai ser redirecionado para uma página semelhante a essa:
 
-<img src="">
+<img src="https://github.com/alinnegrazielle/Tutorial-Github/blob/main/linkremote.png">
 
-mas o que você tem que fazer é bem simples, apenas copie o link que aparecer para você
+Nessa página, apenas copie o link que aparecer para você e volte para o VSCode.
+
+
+### Integrando o repositório local com o repositório remoto
+
+Para passar o commit da sua máquina para um repositório na plataforma do Github, usamos o comando:
+```bash
+git remote add origin <cole aqui o link do repositório que vocẽ copiou da página no github>
+```
+Agora o repositório da sua máquina, já foi conectado com o respositório do Github, porém o commit que damos na máquina não sobe os arquivos automaticamente.
+Precismos então retirá-los da área de staging e `empurrar` para a plataforma do github. Utilize o seguinte comando:
+```bash
+git push -u origin main
+``` 
+
+Voltando para o site do github, recarregue a página e vocẽ verá seus arquivos na plataforma!
+
+### Continuando o projeto na sua máquina
+
+Sempre que você fizer alterações no seu projeto e desejar subí-las para o Github, vá ao terminal do VSCode e digite os seguintes comandos:
+
+```bash
+# Adicione os novos arquivos na área de staging, com o comando:
+git add .
+
+# Em seguida você precisa nomear essa nova versão do seu projeto:
+git commit -m "Novas alterações"
+
+# Agora você já pode subir suas mudanças:
+git push origin main (sem o -u)
+
+``` 
+
